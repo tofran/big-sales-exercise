@@ -19,14 +19,14 @@ def is_id_valid(client_id, number_of_chars=1):
     )
 
 
-def get_valid_sales(produtos, clientes):
+def get_valid_sales(products, clients):
     with open(SALES_FILENAME) as f:
         for line in f:
-            produto, preco, unidades, is_promo, cliente, mes, filial = line.strip().split(" ")
+            product, price, quantity, is_promo, client, month, branch = line.strip().split(" ")
 
             if (
-                produto in produtos
-                and cliente in clientes
+                product in products
+                and client in clients
             ):
                 yield line
 
