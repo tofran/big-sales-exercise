@@ -50,9 +50,9 @@ def count_valid_products():
         if is_id_valid(product_id, 2)
     )
 
-    return len(list(
-        get_valid_sales(products, clients)
-    ))
+    return sum(
+        1 for sale in get_valid_sales(products, clients)
+    )
 
 
 def main():
@@ -69,5 +69,4 @@ def main():
 
 
 if __name__ == "__main__":
-
     main()
